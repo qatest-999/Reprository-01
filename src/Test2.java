@@ -11,7 +11,9 @@ public class Test2 {
          //charcount(str);
          //charoccurance(str);
          ArrayList<Integer> list= new ArrayList<>(Arrays.asList(1, 10, 1, 2, 2, 3, 3, 10, 3, 4, 5, 5));
-         removeduplicatearrylist(list);
+         //removeduplicatearrylist(list);
+         checkPalidrome("Radar");
+         reversewordsprint("Quick Brown fox jump over the lazy dog");
          
 	}
 	// Print no of character in a String
@@ -55,5 +57,27 @@ public class Test2 {
 			}
 		}
 		System.out.println("ArrayList without Duplicates: "+newlist);
+	}
+	//Check a string palindorme or not
+	public static void checkPalidrome(String s) {
+
+		String str ="";
+		for(int i=0; i<s.length(); i++) {
+			str=s.charAt(i)+str;
+		}
+		if(s.equalsIgnoreCase(str)) {
+			System.out.println("The String is Palindrome");
+		}
+		else
+			System.out.println("The String is NOT Palindrome");
+	}
+	//Print a sentence in a reverse words order (I Like Java --> Java Like I)
+	public static void reversewordsprint(String s) {
+		
+		String str="";
+		for(String s2: s.split(" ")) {
+			str=s2+" "+str;
+		}
+		System.out.println(str);
 	}
 }
