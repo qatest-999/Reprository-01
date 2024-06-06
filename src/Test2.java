@@ -12,8 +12,10 @@ public class Test2 {
          //charoccurance(str);
          ArrayList<Integer> list= new ArrayList<>(Arrays.asList(1, 10, 1, 2, 2, 3, 3, 10, 3, 4, 5, 5));
          //removeduplicatearrylist(list);
-         checkPalidrome("Radar");
-         reversewordsprint("Quick Brown fox jump over the lazy dog");
+         //checkPalidrome("Radar");
+         //reversewordsprint("Quick Brown fox jump over the lazy dog");
+         //printlastalpbht("Quick Brown fox jump over the lazy dog");
+         removeduplicate("geeksforgeeks");
          
 	}
 	// Print no of character in a String
@@ -79,5 +81,26 @@ public class Test2 {
 			str=s2+" "+str;
 		}
 		System.out.println(str);
+	}
+	//Print last alphabet in every word of a string
+	public static void printlastalpbht(String s) {
+		
+		for(String s1 : s.split(" ") ) {
+			int lenght=s1.length();
+			System.out.println(s1.charAt(lenght-1));
+		}
+	}
+	//Remove duplicate from a String
+	public static void removeduplicate(String s) {
+		char[] carr= s.toCharArray();
+		String s1="";
+		Map<Character, Integer> duplicate = new HashMap<Character, Integer>();
+		for(int i=0; i<carr.length; i++) {
+			if(!duplicate.containsKey(carr[i])) {
+				s1=s1+carr[i];
+				duplicate.put(carr[i], 1);
+			}
+		}
+		System.out.println(s1);
 	}
 }
