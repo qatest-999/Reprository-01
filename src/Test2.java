@@ -10,12 +10,13 @@ public class Test2 {
          System.out.println(str);
          //charcount(str);
          //charoccurance(str);
-         ArrayList<Integer> list= new ArrayList<>(Arrays.asList(1, 10, 1, 2, 2, 3, 3, 10, 3, 4, 5, 5));
+         //ArrayList<Integer> list= new ArrayList<>(Arrays.asList(1, 10, 1, 2, 2, 3, 3, 10, 3, 4, 5, 5));
          //removeduplicatearrylist(list);
          //checkPalidrome("Radar");
          //reversewordsprint("Quick Brown fox jump over the lazy dog");
          //printlastalpbht("Quick Brown fox jump over the lazy dog");
-         removeduplicate("geeksforgeeks");
+         //removeduplicate("geeksforgeeks");
+         reversecharprint("I Like Java");
          
 	}
 	// Print no of character in a String
@@ -102,5 +103,17 @@ public class Test2 {
 			}
 		}
 		System.out.println(s1);
+	}
+	//Print a sentence in a reverse words order (I Like Java --> avaJ ekiL I)
+	public static void reversecharprint (String S) {
+		String str="", s3="";
+		for(String s2 : S.split(" ")) {
+			for(int i=0;i<s2.length();i++) {
+				s3=s2.charAt(i)+s3;
+			}
+			str=s3+" "+str;
+			s3="";
+		}
+		System.out.println(str);
 	}
 }
