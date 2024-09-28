@@ -1,15 +1,18 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Test3 {
 
 	public static void main(String[] args) {
 		int []arra= {1,2,3,4,5,6};
-		find2ndhigestarray(arra);
+		//find2ndhigestarray(arra);
 		printduplicate("geek for geeks");
-		findindexsum1(arra,3);
-		findindexsum2(arra,8);
+		//findindexsum1(arra,3);
+		//findindexsum2(arra,8);
+		commonelemntarraylist();
 
 	}
 	
@@ -33,7 +36,7 @@ public class Test3 {
 		}
 		for(Map.Entry<Character, Integer> entry : duplicate.entrySet()) {
 			if(entry.getValue()>1) {
-				System.out.println(entry.getKey());
+				System.out.println(entry.getKey() +" Prsent No of Times: "+entry.getValue());
 			}
 		}
 	}
@@ -62,5 +65,27 @@ public class Test3 {
 				}
 			}
 		}
+	}
+	//Find the common elements in two arraylist and remove them
+	public static void commonelemntarraylist() {
+		List<String> list1= new ArrayList<String>();
+		list1.add("Hii"); 
+        list1.add("Geeks"); 
+        list1.add("for"); 
+        list1.add("Geeks");
+        System.out.println("List 1 :"+list1);
+        List<String> list2= new ArrayList<String>();
+        list2.add("Hii"); 
+        list2.add("Geeks"); 
+        list2.add("Gaurav");
+        System.out.println("List 2 :"+list2);
+        List<String> list3= new ArrayList<String>(list1);
+        list3.retainAll(list2);
+        System.out.println("Common Elements :"+list3);
+        List<String>union= new ArrayList<String>(list1);
+        union.addAll(list2);
+        List<String>difference= new ArrayList<String>(union);
+        difference.removeAll(list3);
+        System.out.println("Difference: "+difference);
 	}
 }
